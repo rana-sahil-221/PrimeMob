@@ -1,22 +1,34 @@
 # PrimeMob
 
 PrimeMob is an exclusive online store for buying wide variety of Smartphones and Tablets. This E-Commerce website is developed in Python-Django.
+## Submission details
+Name:- Sahil Rana
+UID:- 21MCC2110
+
+## Objective
+To create a webapp of any theme with login/logout flow which will be connected with Database.
+Create a contac us page. Data submitted should be collected in Database.
+Website should be responsive for desktop and mobile devices.
+Host it on Github/Heroku.
 
 
-
-## Built With
-
-
+## Technologies
 
 * Front End:- HTML, CSS, BootStrap
-* Back End:- Python, Django Framework,SQLITE Database
+* Back End:- Python, Django Framework,Sqlite Database
+* Cloud:- Heroku
 
 
-
+## Outcome
+- This webapp PrimeMob will present a Signup and Signin page to the user.
+- An E-commerce website will popup after successfully signing in.
+- User can browse through the products and the carousel.
+- Contact us page is given for submitting the user query.
+- Signout button is also given to signout of the webapp.
+- User form data will be collected in Model.
+- We can see that data by having the superuser access.
 
 ## Getting Started
-
-
 
 
 * Install django on system
@@ -106,5 +118,43 @@ def signout(request):
     #messages.success(request,"Logged out successfully!!")
     return redirect('signup')
 ```
-
 * Now make a templates folder inside baseapp to store html templates
+* To make user registration, django built in modules are used.
+* Create the admin user with 
+```
+    python manage.py createsuperuser
+```
+* Enter desired username and password. At localhost/admin you will be able to see the collected data in database.
+
+
+## Defining Database
+* We will edit our Models.py file to collect our contact us form data.
+```
+from django.db import models
+
+class Contact(models.Model):
+    name = models.CharField(max_length=122)
+    email = models.EmailField(max_length=122)
+    phone = models.IntegerField()
+    msg = models.TextField(max_length=255)
+    date = models.DateField()
+
+    def __str__(self) -> str:
+        return self.name
+```
+* Define its function in views.py and then register this model in admin.py file.
+```
+    from django.contrib import admin
+    from baseapp.models import Contact
+    # Register your models here.
+    admin.site.register(Contact)
+```
+* Now run these commands to propogate changes to our model into database schema.
+```
+    python manage.py makemigrations
+    python manage.py migrate
+```
+## Run Locally
+* Screenshots of Local implementation of app
+
+![](c:/Users/Sahil/Desktop/1.jpg)
