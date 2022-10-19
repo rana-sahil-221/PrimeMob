@@ -1,9 +1,11 @@
-# PrimeMob
+# PrimeMob - Django Python
 
 PrimeMob is an exclusive online store for buying wide variety of Smartphones and Tablets. This E-Commerce website is developed in Python-Django.
-## Submission details
-Name:- Sahil Rana
-UID:- 21MCC2110
+### Submission details
+- **Name**:- Sahil Rana
+- **UID**:- 21MCC2110
+- **Submitted to**:- Xenon Stack
+- **WebApp Link**: https://primemob-python-django.herokuapp.com/
 
 ## Objective
 To create a webapp of any theme with login/logout flow which will be connected with Database.
@@ -162,3 +164,60 @@ class Contact(models.Model):
 ![](screenshots/local2.jpg)
 
 ## Super User/ Admin 
+- Screenshot of Admin dashboard with superuser rights.
+![](screenshots/11.jpg)
+ - In this Superuser can edit or modify the database.
+
+## Deploying Working Screenshots on Heroku
+
+- Login/Logout Page, it's the first page that user will interact with.
+![](screenshots/1.jpg)
+
+
+- After Successfull signup/registration. It will show success message, which is showing using message module.
+![](screenshots/2.jpg)
+
+
+- Now enter your username and password to login.
+![](screenshots/3.jpg)
+
+
+- Homepage will be displayed with the username of registered user.
+![](screenshots/4.jpg)
+
+
+- Products been listed.
+![](screenshots/5.jpg)
+
+
+- Featured Products section
+![](screenshots/6.jpg)
+
+
+- Contact Us page, which can be accessed through navbar link.
+![](screenshots/7.jpg)
+
+
+- User entering the data in the form. Form uses POST method.
+![](screenshots/8.jpg)
+
+
+- Form data successfully submitted with the message.
+![](screenshots/9.jpg)
+
+
+- When user try to resubmit/refresh it shows error for safety reasons, here csrf_token comes in action which is inbuilt in django.
+![](screenshots/10.jpg)
+
+ - Data accessed by Superuser which was entered by the user in the contact us form.
+ ![](screenshots/12.jpg)
+
+
+ - This shows number of registered users on this webapp.
+ ![](screenshots/13.jpg)
+
+
+
+
+# THANK YOU
+
