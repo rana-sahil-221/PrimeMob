@@ -156,5 +156,9 @@ class Contact(models.Model):
 ```
 ## Run Locally
 * Screenshots of Local implementation of app
+![](screenshots/local.jpg)
 
-![](c:/Users/Sahil/Desktop/1.jpg)
+- Screenshot 2
+![](screenshots/local2.jpg)
+
+## Super User/ Admin 
