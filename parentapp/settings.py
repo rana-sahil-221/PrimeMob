@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gel-13wvlsovn$z6x+gg%jwrx2ijb^x7%snx0)7(h@%pz7z=uj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['primemob-python-django.herokuapp.com']
 
 
 # Application definition
