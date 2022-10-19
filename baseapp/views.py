@@ -1,11 +1,16 @@
+from datetime import datetime
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
+from baseapp.models import Contact
 
 def register(request):
     return render(request,'baseapp/register.html')
+
+def home(request):
+    return render(request,'baseapp/home.html')
 
 def signup(request):
     if request.method == "POST":
@@ -16,7 +21,7 @@ def signup(request):
 
         reg_user = User.objects.create_user(username,email,pass1)
         reg_user.save()
-        messages.success(request, "Your account has been successfully created!!")
+        messages.success(request, "Your account with username {} has been successfully created!!".format(username))
     return render(request,'baseapp/register.html')
 
 def signin(request):
@@ -38,3 +43,16 @@ def signout(request):
     #messages.success(request,"Logged out successfully!!")
     return redirect('signup')
 
+
+
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        msg = request.POST.get('msg')
+        contact =  Contact(name=name,email=email,phone=phone,msg=msg,date=datetime.today())
+        contact.save()
+        messages.success(request,'Form has been submitted Successfully!')
+    return render(request,'baseapp/contact.html')
